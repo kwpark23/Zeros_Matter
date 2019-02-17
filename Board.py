@@ -18,3 +18,6 @@ class Board:
         self.grid[3][3] = WHITE
         self.grid[4][4] = WHITE
         self.logical_moves = []
+
+  def get_placeholder(self, row, col):
+    return self.grid[row][col]
