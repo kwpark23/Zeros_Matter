@@ -24,17 +24,17 @@ class Gui:
 
         # Title label
         title_fnt = pygame.font.SysFont("Avenir", 150)
-        title = title_fnt.render("Flipsies", True, self.TEAL)
+        title = title_fnt.render("Flipsies", True, (97, 148, 175))
         title_pos = title.get_rect(centerx=self.screen.get_width() / 2, centery=160)
 
         # Start label
         start_fnt = pygame.font.SysFont("Avenir", 80)
-        start_txt = start_fnt.render("PLAY", True, self.TEAL)
+        start_txt = start_fnt.render("PLAY", True, (97, 148, 175))
         start_pos = start_txt.get_rect(centerx=self.screen.get_width() / 2, centery=350)
 
         # Instructions label
         ins_fnt = pygame.font.SysFont("Avenir", 50)
-        ins_txt = ins_fnt.render("How to play", True, self.TEAL)
+        ins_txt = ins_fnt.render("How to play", True, (97, 148, 175))
         ins_pos = start_txt.get_rect(centerx=self.screen.get_width() / 2.3, centery=430)
 
         # Add all to screen
