@@ -24,3 +24,24 @@ class Board:
         """ return value on board at specific row / col """
         
         return self.grid[row][col]
+    
+    def count_tiles(self):
+
+    """ Create and return a list of numbers that contains the amount of
+    white, black and free tiles on the board, in this order.
+    """
+    
+    space_count = []
+    black = 0
+    white = 0
+    free = 0
+    for row in range(8):
+        for col in range(8): # Traversal of game board 
+            if self.grid[row][col] == black:
+                black += 1
+            elif self.grid[row][col] == white:
+                white += 1
+            else:
+                free += 1
+    space_count.extend(white, black, free) # Add all totals to a list 
+    return space_count
