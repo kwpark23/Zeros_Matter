@@ -53,7 +53,7 @@ class Board:
         for row in range(8):
             print(row, ' |', end=' ')
             for col in range(8):
-                if self.gird[row][col] == WHITE:
+                if self.grid[row][col] == WHITE:
                     print('W', end=' ')
                 elif self.grid[row][col] == BLACK:
                     print('B', end=' ')
