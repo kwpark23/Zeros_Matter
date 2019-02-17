@@ -45,3 +45,19 @@ class Board:
                 free += 1
     space_count.extend(white, black, free) # Add all totals to a list 
     return space_count
+    
+    def print_grid(self):
+        
+        """ Prints grid """
+        
+        for row in range(8):
+            print(row, ' |', end=' ')
+            for col in range(8):
+                if self.gird[row][col] == WHITE:
+                    print('W', end=' ')
+                elif self.grid[row][col] == BLACK:
+                    print('B', end=' ')
+                else:
+                    print(' ', end=' ')
+                print('|', end=' ')
+            print()
