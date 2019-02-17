@@ -19,5 +19,8 @@ class Board:
         self.grid[4][4] = WHITE
         self.logical_moves = []
 
-  def get_placeholder(self, row, col):
-    return self.grid[row][col]
+    def get_placeholder(self, row, col):
+        
+        """ return value on board at specific row / col """
+        
+        return self.grid[row][col]
