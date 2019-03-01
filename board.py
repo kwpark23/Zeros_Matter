@@ -55,10 +55,6 @@ def lookup_position(current_row, current_column, board, current_player_color):
     return available_positions
 
 
-EMPTY = 0
-BLACK = 1
-WHITE = 2
-
 
   def find_valid_moves(board, current_player_color):
         """Find the available positions to place a disk of the given color. We call this method before
