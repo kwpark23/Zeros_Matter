@@ -17,3 +17,8 @@ class Main:
         self.gui = ui.Gui()
         self.board = board.Board()
         self.get_options()
+
+    def restart_flipsies(self):
+        self.board = board.Board()
+        self.get_options()
+        self.run()
