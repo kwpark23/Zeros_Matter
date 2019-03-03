@@ -17,6 +17,12 @@ class Board:
         self.grid[3][3] = WHITE
         self.grid[4][4] = WHITE
         self.logical_moves = []
+        
+    def get_placeholder(self, row, col):
+        
+        """ return value on board at specific row / col """
+        
+        return self.grid[row][col]
 
 def lookup_position(current_row, current_column, board, current_player_color):
 
