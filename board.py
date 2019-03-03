@@ -154,7 +154,7 @@ def lookup_position(current_row, current_column, board, current_player_color):
 
 
 
-  def find_valid_moves(board, current_player_color):
+  def find_valid_moves(self, current_player_color):
         """Find the available positions to place a disk of the given color. We call this method before
         apply_move."""
 
@@ -167,22 +167,22 @@ def lookup_position(current_row, current_column, board, current_player_color):
 
         for row in range(8):
             for column in range(8):
-                if board[row][column] == current_player_color:
-                    available_positions = available_positions +  board.lookup_position(row, column, current_player_color)
+                if self.board[row][column] == current_player_color:
+                    available_positions = available_positions +  self.lookup_position(row, column, current_player_color)
                     #using Jin's lookup_position function
 
         available_positions = list(set(available_positions))
-        board.find_valid_moves = available_positions
+        self.find_valid_moves = available_positions
         return available_positions
 
-    def apply_move(board, move, current_player_color):
+    def apply_move(self, move, current_player_color):
         """ Determine if the move is valid and apply the move.
         """
         if move in find_valid_moves:
-            board[move[0]][move[1]] = current_player_color
+            self.board[move[0]][move[1]] = current_player_color
             for row in range(1, 9):
                 #the changes are executed using Maha's flip_disks function
-                board.flip_disks(row, move, current_player_color)
+                self.flip_disks(row, move, current_player_color)
                 
     def flip_disks(direction, curr_position, current_player_color):
     """Flips (changes colour) of the disks in the given direction and
