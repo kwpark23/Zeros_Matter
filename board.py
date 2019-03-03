@@ -86,6 +86,20 @@ class Board:
         whites, blacks, empty = self.count_tiles()
 
         return (self.grid, blacks, whites)
+    
+    def game_end(self):
+        """ Determines if game is over """
+        # colour wipeout or board is full
+        whites, blacks, empty = self.count_tiles()
+        if whites == 0 or blacks == 0 or empty == 0:
+            return True
+
+        # no valid moves for both players
+        if self.find_valid_moves(BLACK) == [] and \
+        self.find_valid_moves(WHITE) == []:
+            return True
+
+        return False
 
 def lookup_position(current_row, current_column, board, current_player_color):
 
