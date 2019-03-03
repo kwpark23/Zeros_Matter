@@ -2,6 +2,15 @@ EMPTY = 0
 BLACK = 1
 WHITE = 2
 
+NORTH = 1
+NORTHEAST = 2
+EAST = 3
+SOUTHEAST = 4
+SOUTH = 4
+SOUTHWEST = 6
+WEST = 7
+NORTHWEST = 8
+
 class Board:
 
     """ Grid for which game will be played on """
@@ -106,3 +115,55 @@ def lookup_position(current_row, current_column, board, current_player_color):
             for row in range(1, 9):
                 #the changes are executed using Maha's flip_disks function
                 board.flip_disks(row, move, current_player_color)
+                
+    def flip_disks(direction, curr_position, current_player_color):
+    """Flips (changes colour) of the disks in the given direction and
+    current_player_color from the curr_position. 
+    
+    """
+    
+    incr_row = 0
+    incr_colmn = 0
+
+    #check every direction and incrementing row and column accordingly
+    if directin == NORTH or direction == NORTHEAST or direction == NORTHWEST:
+        incr_row = -1
+
+    if direction == SOUTHEAST or direction == SOUTH or direction == SOUTHWEST:
+        incr_row = 1
+
+    if drection == NORTHEAST or direction == EAST or direction == SOUTHEAST:
+        incr_colmn = 1
+
+    if direction == SOUTHWEST or direction == WEST or direction == NORTHWEST:
+        incr_colmn = -1
+ 
+    # Save locations of disks to flip
+    locations = []
+    x_index = curr_position[0] + incr_row
+    y_index = curr_position[1] + incr_colmn
+
+    # set color of other_player_color
+    if current_player_color == WHITE:
+        other_player_color = BLACK
+    else:
+        other_player_color = WHITE
+
+    # flip disks; change their color
+    if (0 <= x_index < 8) and (0 <= y_index < 8) and board[x_index][y_index] == other_player_color:
+        # Ensures there is at least one disk to be flipped
+        locations = locations + [(x_index, y_index)]
+        x_index += incr_row
+        y_index += incr_colmn
+
+        while (0 <= x_index < 8) and (0 <= y_index < 8) and board[x_index][y_index] == other_player_color:
+            # Searches for more disks to be flipped
+            locations = locations + [(x_index, y_index)]
+            x_index += incr_row
+            y_index += incr_colmn
+
+        if  (0 <= x_index < 8) and (0 <= y_index < 8) and board[x_index][y_index] == current_player_color:
+            # Found a disk of the same color as current_player_color, flips the pieces between
+            for location in locations:
+                # flips the disk color
+                board[location[0]][location[1]] = current_player_colour
