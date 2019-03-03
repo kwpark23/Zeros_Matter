@@ -79,6 +79,13 @@ class Board:
             self.grid[move[0]][move[1]] = color
             for i in range(1, 9):
                 self.flip_disks(i, move, color)
+                
+    def get_changes(self):
+        """ Return white and black tiles. """
+
+        whites, blacks, empty = self.count_tiles()
+
+        return (self.grid, blacks, whites)
 
 def lookup_position(current_row, current_column, board, current_player_color):
 
