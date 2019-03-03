@@ -20,7 +20,7 @@ class Board:
         """ Creates the board """
 
         # creates an 8x8 game board using a list of lists
-        self.grid = [[FREE]*8 for n in range(8)]
+        self.grid = [[EMPTY]*8 for n in range(8)]
         self.grid[3][4] = BLACK
         self.grid[4][3] = BLACK
         self.grid[3][3] = WHITE
@@ -51,7 +51,7 @@ class Board:
                 white += 1
             else:
                 free += 1
-    space_count.extend(white, black, free) # Add all totals to a list 
+    space_count.extend(white, black, empty) # Add all totals to a list 
     return space_count
 
     def print_grid(self):
