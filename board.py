@@ -69,6 +69,16 @@ class Board:
                     print(' ', end=' ')
                 print('|', end=' ')
             print()
+            
+    def apply_move(self, move, color):
+        
+        """ Determine if the move is correct and apply the changes in the game.
+        """
+        
+        if move in self.logical_moves:
+            self.grid[move[0]][move[1]] = color
+            for i in range(1, 9):
+                self.flip_disks(i, move, color)
 
 def lookup_position(current_row, current_column, board, current_player_color):
 
