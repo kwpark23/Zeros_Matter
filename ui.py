@@ -43,3 +43,15 @@ import pygame
         self.screen.blit(ins_txt, ins_pos)
 
          pygame.display.flip()
+            
+    def wait_quit(self):
+        """Waits until a player has chosen to quit, then
+        quits game.
+
+        """
+        # wait user to close window
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                sys.exit(0)
+            elif event.type == KEYDOWN:
+                break
