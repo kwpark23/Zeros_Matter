@@ -3,9 +3,42 @@ import pygame
  class Gui:
     """ Create the graphics of the game. """
 
-     def __init__(self):
+HUMAN = "human"
+BLACK = 1
+WHITE = 2
+
+
+class Gui:
+    def __init__(self):
+        """ Initializes graphics. """
+
         pygame.init()
-        self.screen = pygame.display.set_mode((640, 480))
+
+        # colors
+        self.BLACK = (0, 0, 0)
+        self.WHITE = (255, 255, 255)
+        self.TEAL = (112, 174, 199)
+
+        # display
+        self.SCREEN_SIZE = (640, 480)
+        self.BOARD_POS = (100, 20) #8 by 8 board
+        self.BOARD = (120, 40) #pieces
+        self.BOARD_SIZE = 400
+        self.SQUARE_SIZE = 50
+        self.screen = pygame.display.set_mode(self.SCREEN_SIZE)
+
+        # messages
+        self.BLACK_LABEL_POS = (25, self.SCREEN_SIZE[1] / 4)
+        self.WHITE_LABEL_POS = (540, self.SCREEN_SIZE[1] / 4)
+        self.font = pygame.font.SysFont("Avenir", 50)
+        self.scoreFont = pygame.font.SysFont("Avenir", 58)
+
+        # image files
+        self.board_img = pygame.image.load(os.path.join("images", "board.bmp")).convert()
+        self.black_img = pygame.image.load(os.path.join("images", "black.bmp")).convert()
+        self.white_img = pygame.image.load(os.path.join("images", "white.bmp")).convert()
+        self.tip_img = pygame.image.load(os.path.join("images", "tip.bmp")).convert()
+        self.clear_img = pygame.image.load(os.path.join("images", "blank.bmp")).convert()
 
      def title_screen(self):
         """
