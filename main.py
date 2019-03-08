@@ -8,7 +8,7 @@ BLACK = 1
 WHITE = 2
  
  
-class Main:
+class Flipsies:
     """Game main class."""
  
     def __init__(self):
@@ -18,6 +18,18 @@ class Main:
         self.board = board.Board()
         self.get_options()
 
+    def get_options(self):
+        # set up players
+        player1, player2 = self.gui.show_options()
+        if player1 == "human":
+            self.now_playing = player.Human(self.gui, BLACK)
+
+        if player2 == "human":
+            self.other_player = player.Human(self.gui, WHITE)
+
+        self.gui.show_game()
+        self.gui.update(self.board.board, 2, 2, self.now_playing.color)
+
     def restart_flipsies(self):
         self.board = board.Board()
         self.get_options()
@@ -25,7 +37,7 @@ class Main:
 
         
 def main():
-    game = Othello()
+    game = Flipsies()
     game.run()
 
 
