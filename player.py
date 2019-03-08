@@ -20,7 +20,7 @@ class Human:
     def get_move(self):
         """ Uses gui to handle mouse
         """
-        validMoves = self.current_board.get_valid_moves(self.color)
+        validMoves = self.current_board.find_valid_moves(self.color)
         while True:
             move = self.gui.get_mouse_input()
             if move in validMoves:
