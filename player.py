@@ -9,7 +9,7 @@ def switch_color(color):
     else:
         return BLACK
 
-      class Human:
+class Human:
 
     """ Human player """
 
@@ -17,7 +17,7 @@ def switch_color(color):
         self.color = color
         self.gui = gui
         
-        def get_move(self):
+    def get_move(self):
         """ Uses gui to handle mouse
         """
         validMoves = self.current_board.get_valid_moves(self.color)
@@ -27,3 +27,7 @@ def switch_color(color):
                 break
         self.current_board.apply_move(move, self.color)
         return 0, self.current_board
+      
+    def get_current_board(self, board):
+        self.current_board = board
+
