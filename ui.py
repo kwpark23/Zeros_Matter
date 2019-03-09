@@ -85,6 +85,28 @@ class Gui:
 
             pygame.display.flip()
             
+    def show_score(self, blackStr, whiteStr, current_player_color):
+        """Updates the score board of current_player_color after a
+        move has been placed.
+
+        """
+        
+        black_background = self.BACKGROUND
+        white_background = self.BACKGROUND
+
+
+        font = pygame.font.SysFont("ariel", 30)
+        msgw = font.render("White", True, self.WHITE)
+        msgb = font.render("Black", True, self.BLACK)
+        self.screen.blit(msgw, (self.WHITE_LABEL_POS[0], self.WHITE_LABEL_POS[1] + 15))
+        self.screen.blit(msgb, (self.BLACK_LABEL_POS[0], self.BLACK_LABEL_POS[1] + 15))
+
+
+        text = self.scoreFont.render(blackStr, True, self.BLACK, black_background)
+        text2 = self.scoreFont.render(whiteStr, True, self.WHITE, white_background)
+        self.screen.blit(text, (self.BLACK_LABEL_POS[0], self.BLACK_LABEL_POS[1] + 40))
+        self.screen.blit(text2, (self.WHITE_LABEL_POS[0], self.WHITE_LABEL_POS[1] + 40))
+        
     def wait_quit(self):
         """
         Waits until a player has chosen to quit, then
