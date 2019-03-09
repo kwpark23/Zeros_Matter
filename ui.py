@@ -84,7 +84,35 @@ class Gui:
                         return player1, player2
 
             pygame.display.flip()
-            
+
+    def get_mouse_input(self):
+        """ Gets the location pressed by the mouse.
+        """
+        while True:
+            for event in pygame.event.get():
+                if event.type == MOUSEBUTTONDOWN:
+                    (mouse_x, mouse_y) = pygame.mouse.get_pos()
+
+                    # click was out of board, ignores
+                    if mouse_x > self.BOARD_SIZE + self.BOARD[0] or \
+                       mouse_x < self.BOARD[0] or \
+                       mouse_y > self.BOARD_SIZE + self.BOARD[1] or \
+                       mouse_y < self.BOARD[1]:
+                        continue
+
+                    # find place
+                    position = ((mouse_x - self.BOARD[0]) // self.SQUARE_SIZE), \
+                               ((mouse_y - self.BOARD[1]) // self.SQUARE_SIZE)
+                    
+                    # flip orientation
+                    position = (position[1], position[0])
+                    return position
+
+                elif event.type == QUIT:
+                    sys.exit(0)
+
+            time.sleep(.05)
+
     def update(self, board, blacks, whites, current_player_color):
         """Updates screen with positions of new tiles after a move
         has been made. Also calls to update score of current_player_color.
