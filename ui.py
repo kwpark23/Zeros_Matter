@@ -85,6 +85,22 @@ class Gui:
 
             pygame.display.flip()
             
+    def update(self, board, blacks, whites, current_player_color):
+        """Updates screen with positions of new tiles after a move
+        has been made. Also calls to update score of current_player_color.
+    
+        """
+        
+        for x in range(8):
+            for y in range(8):
+                if board[x][y] != 0:
+                    self.put_stone((x, y), board[x][y])
+
+        blacks_str = '%02d ' % int(blacks)
+        whites_str = '%02d ' % int(whites)
+        self.show_score(blacks_str, whites_str, current_player_color)
+        pygame.display.flip()
+       
     def show_score(self, blackStr, whiteStr, current_player_color):
         """Updates the score board of current_player_color after a
         move has been placed.
