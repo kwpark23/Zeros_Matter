@@ -3,11 +3,13 @@ WHITE = 2
 
 
 def switch_color(color):
-  """Decides to change the color of the disk"""
+    """Decides to change the color of the disk"""
+
     if color == BLACK:
         return WHITE
     else:
         return BLACK
+
 
 class Human:
 
@@ -16,14 +18,17 @@ class Human:
     def __init__(self, gui, color="black"):
         self.color = color
         self.gui = gui
+        self.current_board = None
         
-    def get_move(self):
-        """ Uses gui to handle mouse
+    def get_moves(self):
         """
-        validMoves = self.current_board.find_valid_moves(self.color)
+        Uses gui to handle mouse
+        """
+
+        valid_moves = self.current_board.find_valid_moves(self.color)
         while True:
             move = self.gui.get_mouse_input()
-            if move in validMoves:
+            if move in valid_moves:
                 break
         self.current_board.apply_move(move, self.color)
         return 0, self.current_board
