@@ -216,7 +216,12 @@ class Board:
                     self.board[pos[0]][pos[1]] = color
 
     def game_ended(self):
-        """ Is the game ended? """
+        """ Returns True if the board is full, which means, there are no empty spots
+        left on the board. Also, this method will check if there are any valid moves
+        left for both players. If there are no valid moves left, it will return True,
+        since the game cannot be continued.
+        """
+
         # board full or wipeout
         whites, blacks, empty = self.count_stones()
         if whites == 0 or blacks == 0 or empty == 0:
