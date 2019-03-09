@@ -39,88 +39,88 @@ class Board:
     # For each direction search for possible positions to put a piece.
 
         # north
-        i = row - 1
-        if i >= 0 and self.board[i][column] == other:
-            i = i - 1
-            while i >= 0 and self.board[i][column] == other:
-                i = i - 1
-            if i >= 0 and self.board[i][column] == 0:
-                places = places + [(i, column)]
+        new_row = row - 1
+        if new_row >= 0 and self.board[new_row][column] == other:
+            new_row = new_row - 1
+            while new_row >= 0 and self.board[new_row][column] == other:
+                new_row = new_row - 1
+            if new_row >= 0 and self.board[new_row][column] == 0:
+                places = places + [(new_row, column)]
 
         # northeast
-        i = row - 1
-        j = column + 1
-        if i >= 0 and j < 8 and self.board[i][j] == other:
-            i = i - 1
-            j = j + 1
-            while i >= 0 and j < 8 and self.board[i][j] == other:
-                i = i - 1
-                j = j + 1
-            if i >= 0 and j < 8 and self.board[i][j] == 0:
-                places = places + [(i, j)]
+        new_row = row - 1
+        new_col = column + 1
+        if new_row >= 0 and new_col < 8 and self.board[new_row][new_col] == other:
+            new_row = new_row - 1
+            new_col = new_col + 1
+            while new_row >= 0 and new_col < 8 and self.board[new_row][new_col] == other:
+                new_row = new_row - 1
+                new_col = new_col + 1
+            if new_row >= 0 and new_col < 8 and self.board[new_row][new_col] == 0:
+                places = places + [(new_row, new_col)]
 
         # east
-        j = column + 1
-        if j < 8 and self.board[row][j] == other:
-            j = j + 1
-            while j < 8 and self.board[row][j] == other:
-                j = j + 1
-            if j < 8 and self.board[row][j] == 0:
-                places = places + [(row, j)]
+        new_col = column + 1
+        if new_col < 8 and self.board[row][new_col] == other:
+            new_col = new_col + 1
+            while new_col < 8 and self.board[row][new_col] == other:
+                new_col = new_col + 1
+            if new_col < 8 and self.board[row][new_col] == 0:
+                places = places + [(row, new_col)]
 
         # southeast
-        i = row + 1
-        j = column + 1
-        if i < 8 and j < 8 and self.board[i][j] == other:
-            i = i + 1
-            j = j + 1
-            while i < 8 and j < 8 and self.board[i][j] == other:
-                i = i + 1
-                j = j + 1
-            if i < 8 and j < 8 and self.board[i][j] == 0:
-                places = places + [(i, j)]
+        new_row = row + 1
+        new_col = column + 1
+        if new_row < 8 and new_col < 8 and self.board[new_row][new_col] == other:
+            new_row = new_row + 1
+            new_col = new_col + 1
+            while new_row < 8 and new_col < 8 and self.board[new_row][new_col] == other:
+                new_row = new_row + 1
+                new_col = new_col + 1
+            if new_row < 8 and new_col < 8 and self.board[new_row][new_col] == 0:
+                places = places + [(new_row, new_col)]
 
         # south
-        i = row + 1
-        if i < 8 and self.board[i][column] == other:
-            i = i + 1
-            while i < 8 and self.board[i][column] == other:
-                i = i + 1
-            if i < 8 and self.board[i][column] == 0:
-                places = places + [(i, column)]
+        new_row = row + 1
+        if new_row < 8 and self.board[new_row][column] == other:
+            new_row = new_row + 1
+            while new_row < 8 and self.board[new_row][column] == other:
+                new_row = new_row + 1
+            if new_row < 8 and self.board[new_row][column] == 0:
+                places = places + [(new_row, column)]
 
         # southwest
-        i = row + 1
-        j = column - 1
-        if i < 8 and j >= 0 and self.board[i][j] == other:
-            i = i + 1
-            j = j - 1
-            while i < 8 and j >= 0 and self.board[i][j] == other:
-                i = i + 1
-                j = j - 1
-            if i < 8 and j >= 0 and self.board[i][j] == 0:
-                places = places + [(i, j)]
+        new_row = row + 1
+        new_col = column - 1
+        if new_row < 8 and new_col >= 0 and self.board[new_row][new_col] == other:
+            new_row = new_row + 1
+            new_col = new_col - 1
+            while new_row < 8 and new_col >= 0 and self.board[new_row][new_col] == other:
+                new_row = new_row + 1
+                new_col = new_col - 1
+            if new_row < 8 and new_col >= 0 and self.board[new_row][new_col] == 0:
+                places = places + [(new_row, new_col)]
 
         # west
-        j = column - 1
-        if j >= 0 and self.board[row][j] == other:
-            j = j - 1
-            while j >= 0 and self.board[row][j] == other:
-                j = j - 1
-            if j >= 0 and self.board[row][j] == 0:
-                places = places + [(row, j)]
+        new_col = column - 1
+        if new_col >= 0 and self.board[row][new_col] == other:
+            new_col = new_col - 1
+            while new_col >= 0 and self.board[row][new_col] == other:
+                new_col = new_col - 1
+            if new_col >= 0 and self.board[row][new_col] == 0:
+                places = places + [(row, new_col)]
 
         # northwest
-        i = row - 1
-        j = column - 1
-        if i >= 0 and j >= 0 and self.board[i][j] == other:
-            i = i - 1
-            j = j - 1
-            while i >= 0 and j >= 0 and self.board[i][j] == other:
-                i = i - 1
-                j = j - 1
-            if i >= 0 and j >= 0 and self.board[i][j] == 0:
-                places = places + [(i, j)]
+        new_row = row - 1
+        new_col = column - 1
+        if new_row >= 0 and new_col >= 0 and self.board[new_row][new_col] == other:
+            new_row = new_row - 1
+            new_col = new_col - 1
+            while new_row >= 0 and new_col >= 0 and self.board[new_row][new_col] == other:
+                new_row = new_row - 1
+                new_col = new_col - 1
+            if new_row >= 0 and new_col >= 0 and self.board[new_row][new_col] == 0:
+                places = places + [(new_row, new_col)]
 
         return places
 
