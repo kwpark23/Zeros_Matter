@@ -1,7 +1,9 @@
 import pygame
+import sys
+import time
+import os
+from pygame.locals import *
 
- class Gui:
-    """ Create the graphics of the game. """
 
 HUMAN = "human"
 BLACK = 1
@@ -21,7 +23,7 @@ class Gui:
 
         # display
         self.SCREEN_SIZE = (640, 480)
-        self.BOARD_POS = (100, 20) #8 by 8 board
+        self.BOARD_POS = (100, 20)  #8 by 8 board
         self.BOARD = (120, 40) #pieces
         self.BOARD_SIZE = 400
         self.SQUARE_SIZE = 50
@@ -37,10 +39,11 @@ class Gui:
         self.board_img = pygame.image.load(os.path.join("images", "board.bmp")).convert()
         self.black_img = pygame.image.load(os.path.join("images", "black.bmp")).convert()
         self.white_img = pygame.image.load(os.path.join("images", "white.bmp")).convert()
-        self.tip_img = pygame.image.load(os.path.join("images", "tip.bmp")).convert()
         self.clear_img = pygame.image.load(os.path.join("images", "blank.bmp")).convert()
+
     def show_options(self):
-        """ Shows game options screen and returns chosen options
+        """
+        Shows game options screen and returns chosen options
         """
         # default values
         player1 = HUMAN
@@ -83,10 +86,11 @@ class Gui:
             pygame.display.flip()
             
     def wait_quit(self):
-        """Waits until a player has chosen to quit, then
-        quits game.
-
         """
+        Waits until a player has chosen to quit, then
+        quits game.
+        """
+
         # wait user to close window
         for event in pygame.event.get():
             if event.type == QUIT:
