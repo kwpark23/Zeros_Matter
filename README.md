@@ -3,17 +3,18 @@
 The Othello-inspired board game created using `python` and `pygame`.
 
 ## Table of Content
-<a name="top1"></a> 
+
 1. [What is Flipsies?](#intro) 
     - [Screenshots](#screen)
 2. [Game Features](#feature)
     - [Controls](#control)
-  3. [How to Install Flipsies](#install)
-  4. [Contributers](#contrib)
+<a name="top"></a> 
+3. [How to Install Flipsies](#install) 
+4. [Contributers](#contrib)
 5. [License Information](#license)
 
 ## <a name="intro"></a>What is Flipsies?
-[Back to top](#top1)
+[Back to top](#top)
 
 Well, do you like chess? Do you have little time on your hands? Then Flipsies is the perfect game for you. 
 
