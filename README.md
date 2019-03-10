@@ -1,10 +1,40 @@
-# Zeros_Matter
-CSC290 Group Project Repo
+# Flipsies
 
-Back to our game, Flipsies. It’s simple, fun, interactive, and by interactive, I mean it’s not like those simple games and u download play and get bored of, it works your mind. And I know where are all here computer science and mathematics students and want something more than the average game u can get. So, in case you’re still wondering: why do I need Flipsies when I have chess. Well do you have time to play chess? Flipsises is not as time consuming, and as students we have so little time on our hands. So Flipsies is the perfect game for you. 
+The Othello-inspired board game created using `python` and `pygame`.
 
-Flipsies is based on the game Othello. It uses an 8 by 8 board, and it's turn-based, so it requires exactly 2 players. The game uses 64 disks that are white on one side and black on the other side, but not all disks need to be used for a player to win. 
+## Table of Content
 
-Now, I'll explain how to play Flipsies. The initial set-up of the board always looks like "this", and the orientation of the board doesn't matter. Player 1 has the first turn, and their colour is always white. They may place a disk anywhere on the board such that the disk is in the same column, row, or diagonal of another white disk. Also, there must be at least one black disk between the white disks. Once they make their move, all black disks between the white disks are flipped over and become white. 
+1. <a name="top1"></a> [What is Flipsies?](#intro) 
+    - <a name="top2"></a>[Screenshots](#screen)
+2. <a name="top3"></a>[Game Features](#feature)
+    - <a name="top4"></a>[Controls](#control)
+  3. <a name="top5"></a>[How to Install Flipsies](#install)
+  4. <a name="top6"></a>[Contributers](#contrib)
+5. <a name="top7"></a>[License Information](#license)
 
-Then it's Player 2's turn. Player 2's colour is always black, and they must place a disk according to the same rules as before. The winning condition is fulfilled either when all the disks on the board have the same coloured side facing up, or when there are no more squares available on the board. In the case of the latter, the winner is whoever has the most disks of their colour facing up.
+## <a name="intro"></a>What is Flipsies?
+[Back to top](#top1)
+
+Well, do you like chess? Do you have little time on your hands? Then Flipsies is the perfect game for you. 
+
+Flipsies is based on the game Othello. It is a turn-based strategy board game played on an 8-by-8 board, and it requires 2 players. The game uses 64 disks that are white on one side and black on the other side, but not all disks need to be used for a player to win. 
+
+The winning condition is fulfilled either when all the disks on the board have the same coloured side facing up, or when there are no more squares available on the board. In the case of the latter, the winner is whoever has the most disks of their colour facing up.
+
+## <a name="screen"></a>Screenshots
+[Back to top](#top2)
+
+## <a name="feature"></a>Game Features
+[Back to top](#top3
+
+## <a name="control"></a>Controls
+[Back to top](#top4)
+
+## <a name="install"></a>How to Install Flipsies
+[Back to top](#top5)
+
+## <a name="contrib"></a>Contributers
+[Back to top](#top6)
+
+## <a name="license"></a>License Information
+[Back to top](#top7)
