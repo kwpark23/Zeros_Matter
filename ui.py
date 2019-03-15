@@ -5,10 +5,7 @@ import os
 from __future__ import annotations
 from typing import Tuple 
 from pygame.locals import *
-
-HUMAN = "human"
-BLACK = 1
-WHITE = 2
+from const import HUMAN, WHITE, BLACK
 
 
 class Gui:
