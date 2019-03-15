@@ -2,8 +2,9 @@ import pygame
 import sys
 import time
 import os
+from __future__ import annotations
+from typing import Tuple 
 from pygame.locals import *
-
 
 HUMAN = "human"
 BLACK = 1
@@ -11,17 +12,24 @@ WHITE = 2
 
 
 class Gui:
-    def __init__(self):
-        """ Initializes graphics. """
+    """
+    This class is responsible for all the graphics of the game. Instantiate it as early as possible.
+    === Attributes ===
+    Colours: BLACK, WHITE, TEAL
+    Display: SCREEN_SIZE, BOARD_POS, BOARD, BOARD_SIZE, SQUARE_SIZE, screen
+    Messages: BLACK_LABEL_POS, WHITE_LABEL_POS, font, scoreFont
+    Images: board_img, black_img, white_img, clear_img
+    """
 
+    def __init__(self):
         pygame.init()
 
-        # colors
+        # Colors
         self.BLACK = (0, 0, 0)
         self.WHITE = (255, 255, 255)
         self.TEAL = (112, 174, 199)
 
-        # display
+        # Display
         self.SCREEN_SIZE = (640, 480)
         self.BOARD_POS = (100, 20) #8 by 8 board
         self.BOARD = (120, 40) #pieces
@@ -29,13 +37,13 @@ class Gui:
         self.SQUARE_SIZE = 50
         self.screen = pygame.display.set_mode(self.SCREEN_SIZE)
 
-        # messages
+        # Messages
         self.BLACK_LABEL_POS = (25, self.SCREEN_SIZE[1] / 4)
         self.WHITE_LABEL_POS = (540, self.SCREEN_SIZE[1] / 4)
         self.font = pygame.font.SysFont("Avenir", 50)
         self.scoreFont = pygame.font.SysFont("Avenir", 58)
 
-        # image files
+        # Image files
         self.board_img = pygame.image.load(os.path.join("images", "board.bmp")).convert()
         self.black_img = pygame.image.load(os.path.join("images", "black.bmp")).convert()
         self.white_img = pygame.image.load(os.path.join("images", "white.bmp")).convert()
@@ -113,7 +121,7 @@ class Gui:
         self.put_stone((4, 3), BLACK)
         pygame.display.flip()
 
-    def put_stone(self, pos, color):
+    def put_stone(self, pos: tuple, color):
         """ draws piece with given position and color """
         if pos == None:
             return
