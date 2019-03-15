@@ -1,8 +1,9 @@
-BLACK = 1
-WHITE = 2
-
+from const import WHITE, BLACK
 
 def change_color(color):
+    """
+    Assigns opposite color.
+    """
     if color == BLACK:
         return WHITE
     else:

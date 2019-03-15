@@ -1,7 +1,5 @@
-EMPTY = 0
-BLACK = 1
-WHITE = 2
-
+from const import BLACK, WHITE, EMPTY, NORTH, NORTHWEST, \
+    NORTHEAST, WEST, EAST, SOUTHWEST, SOUTH, SOUTHEAST
 
 class Board:
 
@@ -17,112 +15,6 @@ class Board:
 
     def __getitem__(self, i, j):
         return self.board[i][j]
-
-    def lookup(self, row, column, color):
-        """Returns the possible positions that there exists at least one
-        straight (horizontal, vertical, or diagonal) line between the
-        piece specified by (row, column, color) and another piece of
-        the same color.
-
-        """
-        if color == BLACK:
-            other = WHITE
-        else:
-            other = BLACK
-
-        places = []
-
-        # invalid rows and columns
-        if row < 0 or row > 7 or column < 0 or column > 7:
-            return places
-
-    # For each direction search for possible positions to put a piece.
-
-        # north
-        new_row = row - 1
-        if new_row >= 0 and self.board[new_row][column] == other:
-            new_row = new_row - 1
-            while new_row >= 0 and self.board[new_row][column] == other:
-                new_row = new_row - 1
-            if new_row >= 0 and self.board[new_row][column] == 0:
-                places = places + [(new_row, column)]
-
-        # northeast
-        new_row = row - 1
-        new_col = column + 1
-        if new_row >= 0 and new_col < 8 and self.board[new_row][new_col] == other:
-            new_row = new_row - 1
-            new_col = new_col + 1
-            while new_row >= 0 and new_col < 8 and self.board[new_row][new_col] == other:
-                new_row = new_row - 1
-                new_col = new_col + 1
-            if new_row >= 0 and new_col < 8 and self.board[new_row][new_col] == 0:
-                places = places + [(new_row, new_col)]
-
-        # east
-        new_col = column + 1
-        if new_col < 8 and self.board[row][new_col] == other:
-            new_col = new_col + 1
-            while new_col < 8 and self.board[row][new_col] == other:
-                new_col = new_col + 1
-            if new_col < 8 and self.board[row][new_col] == 0:
-                places = places + [(row, new_col)]
-
-        # southeast
-        new_row = row + 1
-        new_col = column + 1
-        if new_row < 8 and new_col < 8 and self.board[new_row][new_col] == other:
-            new_row = new_row + 1
-            new_col = new_col + 1
-            while new_row < 8 and new_col < 8 and self.board[new_row][new_col] == other:
-                new_row = new_row + 1
-                new_col = new_col + 1
-            if new_row < 8 and new_col < 8 and self.board[new_row][new_col] == 0:
-                places = places + [(new_row, new_col)]
-
-        # south
-        new_row = row + 1
-        if new_row < 8 and self.board[new_row][column] == other:
-            new_row = new_row + 1
-            while new_row < 8 and self.board[new_row][column] == other:
-                new_row = new_row + 1
-            if new_row < 8 and self.board[new_row][column] == 0:
-                places = places + [(new_row, column)]
-
-        # southwest
-        new_row = row + 1
-        new_col = column - 1
-        if new_row < 8 and new_col >= 0 and self.board[new_row][new_col] == other:
-            new_row = new_row + 1
-            new_col = new_col - 1
-            while new_row < 8 and new_col >= 0 and self.board[new_row][new_col] == other:
-                new_row = new_row + 1
-                new_col = new_col - 1
-            if new_row < 8 and new_col >= 0 and self.board[new_row][new_col] == 0:
-                places = places + [(new_row, new_col)]
-
-        # west
-        new_col = column - 1
-        if new_col >= 0 and self.board[row][new_col] == other:
-            new_col = new_col - 1
-            while new_col >= 0 and self.board[row][new_col] == other:
-                new_col = new_col - 1
-            if new_col >= 0 and self.board[row][new_col] == 0:
-                places = places + [(row, new_col)]
-
-        # northwest
-        new_row = row - 1
-        new_col = column - 1
-        if new_row >= 0 and new_col >= 0 and self.board[new_row][new_col] == other:
-            new_row = new_row - 1
-            new_col = new_col - 1
-            while new_row >= 0 and new_col >= 0 and self.board[new_row][new_col] == other:
-                new_row = new_row - 1
-                new_col = new_col - 1
-            if new_row >= 0 and new_col >= 0 and self.board[new_row][new_col] == 0:
-                places = places + [(new_row, new_col)]
-
-        return places
 
     def get_valid_moves(self, color):
         """Get the available positions to put a piece of the given color. For
@@ -152,42 +44,19 @@ class Board:
                 self.flip(i, move, color)
 
     def flip(self, direction, position, color):
-        """ Flips (capturates) the pieces of the given color in the given direction
+        """ Flips the pieces of the given color in the given direction
         (1=North,2=Northeast...) from position. """
         row_inc = 0
         col_inc = 0
 
-        if direction == 1:
-            # north
+        # check every direction and incrementing row and column accordingly
+        if direction == NORTH or direction == NORTHEAST or direction == NORTHWEST:
             row_inc = -1
-            col_inc = 0
-        elif direction == 2:
-            # northeast
-            row_inc = -1
-            col_inc = 1
-        elif direction == 3:
-            # east
-            row_inc = 0
-            col_inc = 1
-        elif direction == 4:
-            # southeast
+        if direction == SOUTHEAST or direction == SOUTH or direction == SOUTHWEST:
             row_inc = 1
+        if direction == NORTHEAST or direction == EAST or direction == SOUTHEAST:
             col_inc = 1
-        elif direction == 5:
-            # south
-            row_inc = 1
-            col_inc = 0
-        elif direction == 6:
-            # southwest
-            row_inc = 1
-            col_inc = -1
-        elif direction == 7:
-            # west
-            row_inc = 0
-            col_inc = -1
-        elif direction == 8:
-            # northwest
-            row_inc = -1
+        if direction == SOUTHWEST or direction == WEST or direction == NORTHWEST:
             col_inc = -1
 
         places = []     # pieces to flip
@@ -251,3 +120,65 @@ class Board:
                     empty += 1
         return whites, blacks, empty
 
+    def lookup(self, row, column, color):
+        """Returns the possible positions that there exists at least one
+        straight (horizontal, vertical, or diagonal) line between the
+        piece specified by (row, column, color) and another piece of
+        the same color.
+        """
+
+        places = []
+
+        if color == BLACK:
+            other = WHITE
+        else:
+            other = BLACK
+
+        # invalid rows and columns
+        if row < 0 or row > 7 or column < 0 or column > 7:
+            return places
+
+        while 0 <= row < 7 and 0 <= column < 7:
+            new_row = row - 1
+            while new_row >= 0 and self.board[new_row][column] == other:
+                new_row = new_row - 1
+                places = places + [(new_row, column)]  # returns north positions
+            new_col = column + 1
+            while new_col < 8 and self.board[row][new_col] == other:
+                new_col = new_col + 1
+                places = places + [(row, new_col)]  # returns east positions
+            new_col = column - 1
+            while new_col >= 0 and self.board[row][new_col] == other:
+                new_col = new_col - 1
+                places = places + [(row, new_col)]  # returns west positions
+            new_row = new_row + 1
+            while new_row < 8 and self.board[new_row][column] == other:
+                new_row = new_row + 1
+                places = places + [(new_row, column)]  # returns south positions
+
+            new_row = row - 1
+            new_col = column + 1
+            while new_row >= 0 and new_col < 8 and self.board[new_row][new_col] == other:
+                new_row = new_row - 1
+                new_col = new_col + 1
+                places = places + [(new_row, new_col)]  # returns northeast
+            new_row = row - 1
+            new_col = column - 1
+            while new_row >= 0 and new_col >= 0 and self.board[new_row][new_col] == other:
+                new_row = new_row - 1
+                new_col = new_col - 1
+                places = places + [(new_row, new_col)]  # returns northwest
+            new_row = new_row + 1
+            new_col = new_col + 1
+            while new_row < 8 and new_col < 8 and self.board[new_row][new_col] == other:
+                new_row = new_row + 1
+                new_col = new_col + 1
+                places = places + [(new_row, new_col)]  # returns southeast
+            new_row = new_row + 1
+            new_col = new_col - 1
+            while new_row < 8 and new_col >= 0 and self.board[new_row][new_col] == other:
+                new_row = new_row + 1
+                new_col = new_col - 1
+                places = places + [(new_row, new_col)  # returns southwest
+
+        return places

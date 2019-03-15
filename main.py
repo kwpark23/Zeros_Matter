@@ -3,9 +3,7 @@ import ui
 import player
 import board
 
-
-BLACK = 1
-WHITE = 2
+from const import WHITE, BLACK
 
 
 class Othello:
@@ -14,13 +12,20 @@ class Othello:
     """
 
     def __init__(self):
-        """ Show options screen and start game modules"""
+        """
+        Initialize options and game screen, and sets up two white
+        stones and two black stones in the middle of the board.
+        """
+
         # start
         self.gui = ui.Gui()
         self.board = board.Board()
         self.get_options()
 
     def get_options(self):
+        """
+        Sets up two players who will participate in the game.
+        """
         # set up players
         player1, player2 = self.gui.show_options()
         if player1 == "human":
@@ -33,6 +38,9 @@ class Othello:
         self.gui.update(self.board.board, 2, 2, self.now_playing.color)
 
     def run(self):
+        """
+        Runs the game.
+        """
         clock = pygame.time.Clock()
         while True:
             clock.tick(60)
@@ -56,6 +64,9 @@ class Othello:
         self.restart()
 
     def restart(self):
+        """
+        Reinitialize the board for a new game.
+        """
         self.board = board.Board()
         self.get_options()
         self.run()
