@@ -34,16 +34,16 @@ stones, or when all the stones on the board display the same colour.
 ## <a name="screen"></a>Screenshots
 
 <p align="center"><img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/53740621_2208717412682202_7727184299136385024_n.png?_nc_cat=107&_nc_ht=scontent-yyz1-1.xx&oh=1acb9b104c053a4c285751605c2b8909&oe=5D0FADF6" alt="Kitten"
-	title="A cute kitten" width="500" height="300"/></p> </br>
+	title="A cute kitten" width="500" height="300"/></p> 
 	
-<img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/53893313_352742821993485_2160516099194486784_n.png?_nc_cat=110&_nc_ht=scontent-yyz1-1.xx&oh=d88b453afd29d6e2a989226647310808&oe=5D18D9CC" alt="Kitten"
-	title="A cute kitten" width="500" height="300" /> </br>
+<p align="center"><img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/53893313_352742821993485_2160516099194486784_n.png?_nc_cat=110&_nc_ht=scontent-yyz1-1.xx&oh=d88b453afd29d6e2a989226647310808&oe=5D18D9CC" alt="Kitten"
+	title="A cute kitten" width="500" height="300" /></p> 
 	
-<img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/54263994_441847886561244_8044955885551747072_n.png?_nc_cat=104&_nc_ht=scontent-yyz1-1.xx&oh=85c52ae211dcfeb3650ae3c4044490b0&oe=5D18AD95" alt="Kitten"
-	title="A cute kitten" width="500" height="300" /> </br>
+<p align="center"><img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/54263994_441847886561244_8044955885551747072_n.png?_nc_cat=104&_nc_ht=scontent-yyz1-1.xx&oh=85c52ae211dcfeb3650ae3c4044490b0&oe=5D18AD95" alt="Kitten"
+	title="A cute kitten" width="500" height="300" /></p> 
 	
-<img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/53918298_622224184884435_418206209766588416_n.png?_nc_cat=107&_nc_ht=scontent-yyz1-1.xx&oh=0114d6a695f0667559699e575f458b6e&oe=5D21C59A" alt="Kitten"
-	title="A cute kitten" width="500" height="300" /> </br>
+<p align="center"><img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/53918298_622224184884435_418206209766588416_n.png?_nc_cat=107&_nc_ht=scontent-yyz1-1.xx&oh=0114d6a695f0667559699e575f458b6e&oe=5D21C59A" alt="Kitten"
+	title="A cute kitten" width="500" height="300" /></p> 
 [Back to top](#top)
 
 ## <a name="feature"></a>Game Features
