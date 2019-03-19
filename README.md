@@ -32,6 +32,8 @@ stones, or when all the stones on the board display the same colour.
 [Back to top](#top)
 
 ## <a name="screen"></a>Screenshots
+
+![Start Image](start.png)
 [Back to top](#top)
 
 ## <a name="feature"></a>Game Features
