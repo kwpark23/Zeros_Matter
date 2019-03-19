@@ -43,7 +43,7 @@ stones, or when all the stones on the board display the same colour.
 	title="A cute kitten" width="500" height="300" /></p> 
 	
 <p align="center"><img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/53918298_622224184884435_418206209766588416_n.png?_nc_cat=107&_nc_ht=scontent-yyz1-1.xx&oh=0114d6a695f0667559699e575f458b6e&oe=5D21C59A" alt="Kitten"
-	title="A cute kitten" width="500" height="300" /></p> 
+	title="A cute kitten" width="500" height="300" /></p> </br>
 [Back to top](#top)
 
 ## <a name="feature"></a>Game Features
