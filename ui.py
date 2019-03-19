@@ -4,7 +4,7 @@ import sys
 import time
 import os
 from pygame.locals import *
-from typing import Tuple
+from typing import *
 
 class Gui:
     """
@@ -44,3 +44,31 @@ class Gui:
         self.board_img = pygame.image.load(os.path.join("images", "board.bmp")).convert()
         self.black_img = pygame.image.load(os.path.join("images", "black.bmp")).convert()
         self.white_img = pygame.image.load(os.path.join("images", "white.bmp")).convert()
+       
+    def get_mouse_input(self) -> None:
+        """ Returns the location of mouse clicks.
+        """
+        while True:
+            for event in pygame.event.get():
+                if event.type == MOUSEBUTTONDOWN:
+                    (mouse_x, mouse_y) = pygame.mouse.get_pos()
+
+                    # Ignores if clicked outside of the board
+                    if mouse_x > self.board_size + self.board[0] or \
+                       mouse_x < self.board[0] or \
+                       mouse_y > self.board_size + self.board[1] or \
+                       mouse_y < self.board[1]:
+                        continue
+
+                    # Finds the location of click
+                    position = ((mouse_x - self.board[0]) // self.square_size), \
+                               ((mouse_y - self.board[1]) // self.square_size)
+
+                    # Flips orientation
+                    position = (position[1], position[0])
+                    return position
+
+                elif event.type == QUIT:
+                    sys.exit(0)
+
+            time.sleep(.05)
