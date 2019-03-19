@@ -44,6 +44,50 @@ class Gui:
         self.board_img = pygame.image.load(os.path.join("images", "board.bmp")).convert()
         self.black_img = pygame.image.load(os.path.join("images", "black.bmp")).convert()
         self.white_img = pygame.image.load(os.path.join("images", "white.bmp")).convert()
+        
+    def title_screen(self) -> Tuple(str, str):
+        """
+        Displays title screen containing title, 2 buttons, and logo.
+        When you click "PLAY", this method returns the types of Player 1
+        and Player 2 (as of now, both are humans).
+        """
+
+        while True:
+            # Logo
+            pygame.draw.rect(self.screen, self.theme, pygame.Rect(20, 20, 610, 430), 10)
+            pygame.draw.circle(self.screen, self.white, (340, 270), 30, 0)
+            pygame.draw.circle(self.screen, self.white, (300, 250), 33, 3)
+            pygame.draw.circle(self.screen, self.black, (300, 250), 30, 0)
+
+            # Title
+            title_fnt = pygame.font.SysFont("Avenir", 150)
+            title = title_fnt.render("Flipsies", True, self.theme)
+            title_pos = title.get_rect(centerx=self.screen.get_width() / 2, centery=160)
+
+            # Play button
+            play_fnt = pygame.font.SysFont("Avenir", 80)
+            play_txt = play_fnt.render("PLAY", True, self.theme)
+            play_pos = play_txt.get_rect(centerx=self.screen.get_width() / 2, centery=350)
+
+            # Instructions label
+            ins_fnt = pygame.font.SysFont("Avenir", 50)
+            ins_txt = ins_fnt.render("How to play", True, (97, 148, 175))
+            ins_pos = start_txt.get_rect(centerx=self.screen.get_width() / 2.3, centery=430)
+
+            # Add all to screen
+            self.screen.blit(title, title_pos)
+            self.screen.blit(play_txt, play_pos)
+            self.screen.blit(ins_txt, ins_pos)
+            
+            for event in pygame.event.get():
+                if event.type == QUIT:
+                    sys.exit(0)
+                elif event.type == MOUSEBUTTONDOWN:
+                    (mouse_x, mouse_y) = pygame.mouse.get_pos()
+                    if start_pos.collidepoint(mouse_x, mouse_y):
+                        return ("human", "human")
+
+            pygame.display.flip()
        
     def get_mouse_input(self) -> None:
         """ Returns the location of mouse clicks.
