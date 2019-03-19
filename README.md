@@ -3,14 +3,14 @@
 The Othello-inspired board game created using `python` and `pygame`.
 
 ## Table of Content
-
+<a name="top"></a> 
 1. [What is Flipsies?](#intro) 
     - [Screenshots](#screen)
 2. [Game Features](#feature)
-<a name="top"></a> 
-3. [How to Install Flipsies](#install) 
-4. [Contributers](#contrib)
-5. [License Information](#license)
+3. [How to Install Flipsies](#install)
+4. [Documentation](#documen)
+5. [Contributers](#contrib)
+6. [License Information](#license)
 
 ## <a name="intro"></a>What is Flipsies?
 
@@ -49,6 +49,13 @@ the game detects that a player has won.
 
 ## <a name="install"></a>How to Install Flipsies
 [Back to top](#top)
+
+## <a name="documen"></a>Documentation
+
+The documentation to our project is in the wiki page of our repo. 
+Click the link [&lt;here&gt;](https://github.com/kwpark23/Zeros_Matter/wiki)
+
+[Back to top])(#top)
 
 ## <a name="contrib"></a>Contributers
 [Back to top](#top)
