@@ -9,7 +9,7 @@ The Othello-inspired board game created using `python` and `pygame`.
 2. [Game Features](#feature)
 3. [How to Install Flipsies](#install)
 4. [Documentation](#documen)
-5. [Contributers](#contrib)
+5. [Authors](#Authors)
 6. [License Information](#license)
 
 ## <a name="intro"></a>What is Flipsies?
@@ -61,6 +61,8 @@ the game detects that a player has won.
 [Back to top](#top)
 
 ## <a name="install"></a>How to Install Flipsies
+
+
 [Back to top](#top)
 
 ## <a name="documen"></a>Documentation
@@ -70,7 +72,16 @@ Click the link [here](https://github.com/kwpark23/Zeros_Matter/wiki)
 
 [Back to top](#top)
 
-## <a name="contrib"></a>Contributers
+## <a name="Authors"></a>Authors
+
+Zeros_Matter is a group of 1st and 2nd year computer science students at the University of Toronto Mississauga. This project was done for credit in the course CSC290: Communication Skills in Computer Science. Group members are listed below:
+
+-	Maha Keseibi
+-	Adiba Ahmed
+-	Damian Koscielniak
+-	Jin  Park
+-	Nivy Khani
+
 [Back to top](#top)
 
 ## <a name="license"></a>License Information
