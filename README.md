@@ -7,7 +7,6 @@ The Othello-inspired board game created using `python` and `pygame`.
 1. [What is Flipsies?](#intro) 
     - [Screenshots](#screen)
 2. [Game Features](#feature)
-    - [Controls](#control)
 <a name="top"></a> 
 3. [How to Install Flipsies](#install) 
 4. [Contributers](#contrib)
@@ -36,9 +35,6 @@ stones, or when all the stones on the board display the same colour.
 [Back to top](#top)
 
 ## <a name="feature"></a>Game Features
-[Back to top](#top)
-
-## <a name="control"></a>Controls
 
 All gameplay is controlled by mouse input, and there are no keyboard commands. 
 
