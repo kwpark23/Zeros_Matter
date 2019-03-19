@@ -55,7 +55,7 @@ the game detects that a player has won.
 The documentation to our project is in the wiki page of our repo. 
 Click the link [&lt;here&gt;](https://github.com/kwpark23/Zeros_Matter/wiki)
 
-[Back to top])(#top)
+[Back to top](#top)
 
 ## <a name="contrib"></a>Contributers
 [Back to top](#top)
