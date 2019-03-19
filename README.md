@@ -33,9 +33,8 @@ stones, or when all the stones on the board display the same colour.
 
 ## <a name="screen"></a>Screenshots
 
-<img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/53740621_2208717412682202_7727184299136385024_n.png?_nc_cat=107&_nc_ht=scontent-yyz1-1.xx&oh=1acb9b104c053a4c285751605c2b8909&oe=5D0FADF6"
-     alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
+<img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/53740621_2208717412682202_7727184299136385024_n.png?_nc_cat=107&_nc_ht=scontent-yyz1-1.xx&oh=1acb9b104c053a4c285751605c2b8909&oe=5D0FADF6" alt="Kitten"
+	title="A cute kitten" width="150" height="100" />
 [Back to top](#top)
 
 ## <a name="feature"></a>Game Features
