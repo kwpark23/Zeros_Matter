@@ -75,10 +75,12 @@ Click the link [&lt;here&gt;](https://github.com/kwpark23/Zeros_Matter/wiki)
 
 ## <a name="license"></a>License Information
 
-The UofT License (UofT)
+The MIT License (MIT)
 
 Copyright © 2019 Zeros_Matter
 
 License for them is in `Public Domain`
+
+You can find a copy of the License at https://mit-license.org/
 
 [Back to top](#top)
