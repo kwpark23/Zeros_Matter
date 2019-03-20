@@ -116,3 +116,19 @@ class Gui:
                     sys.exit(0)
 
             time.sleep(.05)
+            
+      
+    def show_score(self, black_score: int, white_score: int) -> None:
+        """
+        Returns the current score on the screen.
+        """
+        font = pygame.font.SysFont("ariel", 30)
+        msg_white = font.render("Player 1", True, self.white)
+        msg_black = font.render("Player 2", True, self.black)
+        display_black = self.scoreFont.render(black_score, True, self.black, self.theme)
+        display_white = self.scoreFont.render(white_score, True, self.white, self.theme)
+
+        self.screen.blit(msg_white, (self.white_label_pos[0], self.white_label_pos[1] + 15))
+        self.screen.blit(msg_black, (self.black_label_pos[0], self.black_label_pos[1] + 15))
+        self.screen.blit(display_black, (self.black_label_pos[0], self.black_label_pos[1] + 40))
+        self.screen.blit(display_white, (self.white_label_pos[0], self.white_label_pos[1] + 40))
