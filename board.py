@@ -223,5 +223,22 @@ class Board:
             return True
 
         return False
+    
+    def count_stones(self) -> Tuple(int, int, int):
+        """ Returns the number of white pieces, black pieces and empty squares, in
+        this order.
+        """
+        whites = 0
+        blacks = 0
+        empty = 0
+        for i in range(8):
+            for j in range(8):
+                if self.board[i][j] == WHITE:
+                    whites += 1
+                elif self.board[i][j] == BLACK:
+                    blacks += 1
+                else:
+                    empty += 1
+        return whites, blacks, empty
 
                     
