@@ -63,3 +63,11 @@ class Main:
         self.gui.show_winner(winner)
         pygame.time.wait(3000)
         self.restart_flipsies()
+        
+     def restart_flipsies(self) -> None:
+        """
+        Reinitialize the board for a new game.
+        """
+        self.board = board.Board()
+        self.get_options()
+        self.run()
