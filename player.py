@@ -16,3 +16,14 @@ class Human:
     def __init__(self, gui, color="black"):
         self.color = color
         self.gui = gui
+        
+    def get_move(self) -> None:
+        """ Uses gui to handle mouse
+        """
+        valid_moves = self.current_board.get_valid_moves(self.color)
+        while True:
+            move = self.gui.get_mouse_input()
+            if move in valid_moves:
+                break
+        self.current_board.apply_move(move, self.color)
+        return 0, self.current_board
