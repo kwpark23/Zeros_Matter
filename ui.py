@@ -153,3 +153,17 @@ class Gui:
         self.screen.blit(msg_black, (self.black_label_pos[0], self.black_label_pos[1] + 15))
         self.screen.blit(display_black, (self.black_label_pos[0], self.black_label_pos[1] + 40))
         self.screen.blit(display_white, (self.white_label_pos[0], self.white_label_pos[1] + 40))
+       
+    def update_screen(self, board: List[List[int]], black: float, white: float) -> None:
+        """Display updated scores of both players on screen.
+        """
+        for i in range(8):
+            for j in range(8):
+                if board[i][j] != 0:
+                    self.put_stone((i, j), board[i][j])
+
+        # Converts scores to integer values
+        black_score = '%02d ' % int(black)
+        white_score = '%02d ' % int(white)
+        self.show_score(black_score, white_score)
+        pygame.display.flip()
