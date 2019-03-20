@@ -152,6 +152,24 @@ class Gui:
         self.screen.blit(msg_black, (self.black_label_pos[0], self.black_label_pos[1] + 15))
         self.screen.blit(display_black, (self.black_label_pos[0], self.black_label_pos[1] + 40))
         self.screen.blit(display_white, (self.white_label_pos[0], self.white_label_pos[1] + 40))
+        
+    def put_stone(self, pos: Tuple(int, int), player_color: int) -> None:
+        """
+        Puts a piece of the given color in the given position. 
+        """
+        if pos == None:
+            return
+        pos = (pos[1], pos[0])
+
+        if player_color == player1:
+            img = self.black_img
+        else:
+            img = self.white_img
+            
+        x = pos[0] * self.square_size + self.board[0]
+        y = pos[1] * self.square_size + self.board[1]
+        self.screen.blit(img, (x, y), img.get_rect())
+        pygame.display.flip()
        
     def update_screen(self, board: List[List[int]], black: float, white: float) -> None:
         """Display updated scores of both players on screen.
