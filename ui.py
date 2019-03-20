@@ -138,7 +138,6 @@ class Gui:
 
             time.sleep(.05)
             
-      
     def show_score(self, black_score: int, white_score: int) -> None:
         """
         Returns the current score on the screen.
@@ -184,3 +183,15 @@ class Gui:
             msg = font.render("Tie!", True, self.white)
         self.screen.blit(msg, msg.get_rect(centerx=self.screen.get_width() / 2, centery=120))
         pygame.display.flip()
+        
+    def quit_game(self) -> None:
+        """
+        When user closes the window, the system quits the game.
+        """
+
+        # Wait for user to close window
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                sys.exit(0)
+            elif event.type == KEYDOWN:
+                break
