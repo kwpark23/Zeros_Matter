@@ -27,3 +27,8 @@ class Human:
                 break
         self.current_board.apply_move(move, self.color)
         return 0, self.current_board
+    
+    def get_current_board(self, board) -> None:
+        """Shows the updated board after the move is made"""
+        self.current_board = board
+
