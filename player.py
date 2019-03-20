@@ -9,7 +9,7 @@ def switch_color(color) -> None:
     else:
         return BLACK
 
-class Human:
+class Player:
 
     """ Human player """
 
