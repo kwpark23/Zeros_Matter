@@ -167,3 +167,20 @@ class Gui:
         white_score = '%02d ' % int(white)
         self.show_score(black_score, white_score)
         pygame.display.flip()
+        
+    def show_winner(self, player: int) -> None:
+        """
+        Shows winner of the game. If there is no winner,
+        it defaults to a tie.
+        """
+        
+        self.screen.fill(self.theme)
+        font = pygame.font.SysFont("ariel", 80)
+        if player == 2:
+            msg = font.render("WHITE WINS!", True, self.black)
+        elif player == 1:
+            msg = font.render("BLACK WINS", True, self.black)
+        else:
+            msg = font.render("Tie!", True, self.white)
+        self.screen.blit(msg, msg.get_rect(centerx=self.screen.get_width() / 2, centery=120))
+        pygame.display.flip()
