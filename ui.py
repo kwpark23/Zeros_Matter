@@ -88,6 +88,27 @@ class Gui:
                         return ("human", "human")
 
             pygame.display.flip()
+            
+    def show_game(self) -> None:
+        """
+        Creates board and adds 4 pieces in the initial positions.
+        Game stays on this screen until a player wins.
+        """
+        self.background = pygame.Surface(self.screen.get_size()).convert()
+        self.background.fill(self.theme)
+        
+        self.score_size = 50
+        self.score1 = pygame.Surface((self.score_size, self.score_size))
+        self.score2 = pygame.Surface((self.score_size, self.score_size))
+        self.screen.blit(self.background, (0, 0), self.background.get_rect())
+        self.screen.blit(self.board_img, self.board_pos, self.board_img.get_rect())
+        
+        self.put_stone((3, 3), 2)
+        self.put_stone((4, 4), 2)
+        self.put_stone((3, 4), 1)
+        self.put_stone((4, 3), 1)
+        
+        pygame.display.flip()
        
     def get_mouse_input(self) -> None:
         """ Returns the location of mouse clicks.
