@@ -71,3 +71,12 @@ class Main:
         self.board = board.Board()
         self.get_options()
         self.run()
+      
+    
+def main() -> None:
+    game = Flipsies()
+    game.run()
+
+
+if __name__ == '__main__':
+    main()
