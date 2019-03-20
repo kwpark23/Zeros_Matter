@@ -141,3 +141,66 @@ class Board:
         self.valid_moves = places
         return places
 
+    def flip(self, direction: int, position: Tuple, color: int):
+        """ Flips (capturates) the pieces of the given color in the given direction
+        (1=North,2=Northeast...) from position. """
+        row_inc = 0
+        col_inc = 0
+
+        if direction == 1:
+            # north
+            row_inc = -1
+            col_inc = 0
+        elif direction == 2:
+            # northeast
+            row_inc = -1
+            col_inc = 1
+        elif direction == 3:
+            # east
+            row_inc = 0
+            col_inc = 1
+        elif direction == 4:
+            # southeast
+            row_inc = 1
+            col_inc = 1
+        elif direction == 5:
+            # south
+            row_inc = 1
+            col_inc = 0
+        elif direction == 6:
+            # southwest
+            row_inc = 1
+            col_inc = -1
+        elif direction == 7:
+            # west
+            row_inc = 0
+            col_inc = -1
+        elif direction == 8:
+            # northwest
+            row_inc = -1
+            col_inc = -1
+
+        places = []     # pieces to flip
+        i = position[0] + row_inc
+        j = position[1] + col_inc
+
+        if color == WHITE:
+            other = BLACK
+        else:
+            other = WHITE
+
+        if i in range(8) and j in range(8) and self.board[i][j] == other:
+            # assures there is at least one piece to flip
+            places = places + [(i, j)]
+            i = i + row_inc
+            j = j + col_inc
+            while i in range(8) and j in range(8) and self.board[i][j] == other:
+                # search for more pieces to flip
+                places = places + [(i, j)]
+                i = i + row_inc
+                j = j + col_inc
+            if i in range(8) and j in range(8) and self.board[i][j] == color:
+                # found a piece of the right color to flip the pieces between
+                for pos in places:
+                    # flips
+                    self.board[pos[0]][pos[1]] = color
