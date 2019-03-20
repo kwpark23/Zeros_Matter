@@ -121,3 +121,23 @@ class Board:
                 places = places + [(new_row, new_col)]
 
         return places
+
+    def get_valid_moves(self, color: int) -> List[Tuple(int, int)]:
+        """Get the available positions to put a piece of the given color. For
+        each piece of the given color we search its neighbours,
+        searching for pieces of the other color to determine if is
+        possible to make a move. This method must be called before
+        apply_move.
+
+        """
+        places = []
+
+        for i in range(8):
+            for j in range(8):
+                if self.board[i][j] == color:
+                    places = places + self.lookup(i, j, color)
+
+        places = list(set(places))
+        self.valid_moves = places
+        return places
+
