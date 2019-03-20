@@ -12,3 +12,7 @@ class Board:
         self.board[3][3] = WHITE
         self.board[4][4] = WHITE
         self.valid_moves = []
+        
+    def __getitem__(self, row: int, column: int) -> int:
+        return self.board[row][column]
+    
