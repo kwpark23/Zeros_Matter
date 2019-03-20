@@ -62,6 +62,13 @@ the game detects that a player has won.
 
 ## <a name="install"></a>How to Install Flipsies
 
+### For `Windows`
+
+ First, download `Pygame` [here.](https://www.pygame.org/download.shtml)
+ 
+- :arrow_down: [Download Flipsies' zip file it here.](https://github.com/kwpark23/Zeros_Matter/zipball/master)
+- Unzip and run the executable named `main` inside the extracted file with IDE of your choice.
+
 
 [Back to top](#top)
 
