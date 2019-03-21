@@ -5,6 +5,7 @@ import time
 import os
 from pygame.locals import *
 from typing import *
+from const import BLACK, WHITE
 
 class Gui:
     """
@@ -84,8 +85,6 @@ class Gui:
                     sys.exit(0)
                 elif event.type == MOUSEBUTTONDOWN:
                     (mouse_x, mouse_y) = pygame.mouse.get_pos()
-                    if start_pos.collidepoint(mouse_x, mouse_y):
-                        return ("human", "human")
 
             pygame.display.flip()
             
@@ -94,15 +93,13 @@ class Gui:
         Creates board and adds 4 pieces in the initial positions.
         Game stays on this screen until a player wins.
         """
+        
         self.background = pygame.Surface(self.screen.get_size()).convert()
         self.background.fill(self.theme)
-        
-        self.score_size = 50
-        self.score1 = pygame.Surface((self.score_size, self.score_size))
-        self.score2 = pygame.Surface((self.score_size, self.score_size))
         self.screen.blit(self.background, (0, 0), self.background.get_rect())
         self.screen.blit(self.board_img, self.board_pos, self.board_img.get_rect())
         
+        # Place 2 white stones and 2 black stones in the center of the board
         self.put_stone((3, 3), 2)
         self.put_stone((4, 4), 2)
         self.put_stone((3, 4), 1)
@@ -113,6 +110,7 @@ class Gui:
     def get_mouse_input(self) -> None:
         """ Returns the location of mouse clicks.
         """
+        
         while True:
             for event in pygame.event.get():
                 if event.type == MOUSEBUTTONDOWN:
@@ -142,6 +140,7 @@ class Gui:
         """
         Returns the current score on the screen.
         """
+        
         font = pygame.font.SysFont("ariel", 30)
         msg_white = font.render("Player 1", True, self.white)
         msg_black = font.render("Player 2", True, self.black)
@@ -153,12 +152,14 @@ class Gui:
         self.screen.blit(display_black, (self.black_label_pos[0], self.black_label_pos[1] + 40))
         self.screen.blit(display_white, (self.white_label_pos[0], self.white_label_pos[1] + 40))
         
-    def put_stone(self, pos: Tuple(int, int), player_color: int) -> None:
+    def put_stone(self, pos: Tuple[int, int], player_color: int) -> None:
         """
         Puts a piece of the given color in the given position. 
         """
+        
         if pos == None:
             return
+        
         pos = (pos[1], pos[0])
 
         if player_color == player1:
@@ -168,20 +169,25 @@ class Gui:
             
         x = pos[0] * self.square_size + self.board[0]
         y = pos[1] * self.square_size + self.board[1]
+        
+        # Place a stone
         self.screen.blit(img, (x, y), img.get_rect())
         pygame.display.flip()
        
     def update_screen(self, board: List[List[int]], black: float, white: float) -> None:
-        """Display updated scores of both players on screen.
+        """Display updated stone placement and scores of both players on screen.
         """
+        
+        # Place all the stones
         for i in range(8):
             for j in range(8):
                 if board[i][j] != 0:
                     self.put_stone((i, j), board[i][j])
 
-        # Converts scores to integer values
+        # Converts float to integer values
         black_score = '%02d ' % int(black)
         white_score = '%02d ' % int(white)
+        
         self.show_score(black_score, white_score)
         pygame.display.flip()
         
@@ -193,13 +199,14 @@ class Gui:
         
         self.screen.fill(self.theme)
         font = pygame.font.SysFont("ariel", 80)
-        if player == 2:
+        if player == WHITE:
             msg = font.render("WHITE WINS!", True, self.black)
-        elif player == 1:
+        elif player == BLACK:
             msg = font.render("BLACK WINS", True, self.black)
         else:
             msg = font.render("Tie!", True, self.white)
-        self.screen.blit(msg, msg.get_rect(centerx=self.screen.get_width() / 2, centery=120))
+           
+        self.screen.blit(msg, msg.get_rect(centerx=self.screen.get_width()/2, centery=120))
         pygame.display.flip()
         
     def quit_game(self) -> None:
