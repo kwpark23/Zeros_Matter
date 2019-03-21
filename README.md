@@ -2,9 +2,9 @@
 
 The Othello-inspired board game created using `python` and `pygame`.
 
-## Table of Content
+## Navigation
 <a name="top"></a> 
-1. [What is Flipsies?](#intro) 
+1. [Game Description](#intro) 
     - [Screenshots](#screen)
 2. [Game Features](#feature)
 3. [How to Install Flipsies](#install)
@@ -12,16 +12,15 @@ The Othello-inspired board game created using `python` and `pygame`.
 5. [Authors](#Authors)
 6. [License Information](#license)
 
-## <a name="intro"></a>What is Flipsies?
+## <a name="intro"></a>Game Description 
 
 Do you find checkers boring? Do you find chess time-consuming? Then Flipsies is the perfect game for you! 
 
-Flipsies is our Python spin-off of the famous strategy board game "Othello". With a colourful blue-and-black theme, intuitive 
-interface, and fast installation, Flipsies can be enjoyed by all ages. 
+Flipsies is a Python implementation of the famous strategy board game "Othello". With a minimalistic blue-and-black theme, an intuitive interface, and easy installation, Flipsies can be enjoyed by all ages. 
 
 Flipsies uses an 8-by-8 board and requires 2 players. Player 1 can only place white stones, and Player 2 can only place black 
 stones. Initially, the board has two black stones and two white stones arranged in the centre of the board, and gameplay 
-branches out from the centre. The objective is to have all the stones on the board coloured your colour by the end of the 
+branches out from the centre. The objective is to have all the stones on the board displaying  your colour by the end of the 
 game.
 
 The rules of Flipsies are very straightforward. During their turn, each player can place a stone in the same diagonal, column, 
@@ -66,7 +65,7 @@ the game detects that a player has won.
 
  First, download `Pygame` [here.](https://www.pygame.org/download.shtml)
  
-- :arrow_down: [Download Flipsies' zip file it here.](https://github.com/kwpark23/Zeros_Matter/zipball/master)
+- :arrow_down: [Download Flipsies' zip file here.](https://github.com/kwpark23/Zeros_Matter/zipball/master)
 - Unzip and run the executable named `main` inside the extracted file with IDE of your choice.
 
 
@@ -83,11 +82,11 @@ Click the link [here](https://github.com/kwpark23/Zeros_Matter/wiki)
 
 Zeros_Matter is a group of 1st and 2nd year computer science students at the University of Toronto Mississauga. This project was done for credit in the course CSC290: Communication Skills in Computer Science. Group members are listed below:
 
--	Maha Keseibi
+-	Maha Kesibi
 -	Adiba Ahmed
 -	Damian Koscielniak
 -	Jin  Park
--	Nivy Khani
+-	Nivy Kani
 
 [Back to top](#top)
 
