@@ -6,7 +6,7 @@ The Othello-inspired board game created using `python` and `pygame`.
 <a name="top"></a> 
 1. [Game Description](#intro) 
     - [Screenshots](#screen)
-2. [Game Features](#feature)
+2. [Game Controls and Features](#feature)
 3. [How to Install Flipsies](#install)
 4. [Documentation](#documen)
 5. [Authors](#Authors)
@@ -46,16 +46,19 @@ stones, or when all the stones on the board display the same colour.
 	
 [Back to top](#top)
 
-## <a name="feature"></a>Game Features
+## <a name="feature"></a>Game Controls and Features 
 
 All gameplay is controlled by mouse input, and there are no keyboard commands. 
 
-First, click the "Play" button to enter the game screen. Once a board appears, click on the squares on the board to place stones. 
+The title screen conatains a "Play" button and an "Instructions" button.
+- Click on the "Play" button to advance to the game screen.
+- Click on the "Instructions" button to read the game rules. Click on the "Back" button to return to the title screen.
 
-Important: A stone will only be placed on the board once clicked **if the move is valid according to the rules of Flipsies. 
+The game screen contains an 8 by 8 board.
+- Click on the squares on the board to places stones.
+- **Important**: A stone will only be placed on the board if the move is valid according to the rules of Flipsies.
 
-Continue to place stones, alternating players for each turn. The game will automatically proceed to the winning screen once 
-the game detects that a player has won. 
+The game will automatically proceed to the winning screen once the game detects that a player has won. 
 
 [Back to top](#top)
 
