@@ -74,16 +74,18 @@ The game will automatically proceed to the winning screen once the game detects 
 
 [Back to top](#top)
 
-## <a name="documen"></a>Documentation
+## <a name="documen"></a>Documentation and Directory Structure
 
-The documentation to our project is in the wiki page of our repo. 
-Click the link [here](https://github.com/kwpark23/Zeros_Matter/wiki)
+The documentation and directory structure of our project is located in the Wiki page of our repository. 
+Check it out by clicking [here](https://github.com/kwpark23/Zeros_Matter/wiki)
 
 [Back to top](#top)
 
 ## <a name="Authors"></a>Authors
 
-Zeros_Matter is a group of 1st and 2nd year computer science students at the University of Toronto Mississauga. This project was done for credit in the course CSC290: Communication Skills in Computer Science. Group members are listed below:
+Zeros_Matter is a group of 1st and 2nd year computer science students at the University of Toronto Mississauga. 
+This project was done for credit in the course CSC290: Communication Skills for Computer Scientists. Group members 
+are listed below:
 
 -	Maha Kesibi
 -	Adiba Ahmed
@@ -99,8 +101,9 @@ The MIT License (MIT)
 
 Copyright © 2019 Zeros_Matter
 
+You can find a copy of the License at https://mit-license.org/
+
 License for them is in `Public Domain`
 
-You can find a copy of the License at https://mit-license.org/
 
 [Back to top](#top)
