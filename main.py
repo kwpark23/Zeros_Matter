@@ -38,7 +38,7 @@ class Main:
         self.gui.show_game()
         self.gui.update_screen(self.board.board, 2, 2, self.now_playing.color)
         
-     def run(self) -> None:
+    def run(self) -> None:
         """
         Runs flipsies.
         """
@@ -64,7 +64,7 @@ class Main:
         pygame.time.wait(3000)
         self.restart_flipsies()
         
-     def restart_flipsies(self) -> None:
+    def restart_flipsies(self) -> None:
         """
         Reinitialize the board for a new game.
         """
