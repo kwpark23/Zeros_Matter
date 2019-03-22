@@ -1,6 +1,6 @@
 from const import WHITE, BLACK
 
-def switch_color(color) -> None:
+def switch_color(color) -> Int:
     """
     Assigns opposite color.
     """
@@ -17,7 +17,7 @@ class Player:
         self.color = color
         self.gui = gui
         
-    def get_move(self) -> None:
+    def get_move(self) -> Tuple(int, int):
         """ Uses gui to handle mouse
         """
         valid_moves = self.current_board.get_valid_moves(self.color)
