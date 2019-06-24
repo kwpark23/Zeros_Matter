@@ -31,9 +31,6 @@ stones, or when all the stones on the board display the same colour.
 [Back to top](#top)
 
 ## <a name="screen"></a>Screenshots
-
-<p align="center"><img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/53740621_2208717412682202_7727184299136385024_n.png?_nc_cat=107&_nc_ht=scontent-yyz1-1.xx&oh=1acb9b104c053a4c285751605c2b8909&oe=5D0FADF6" alt="Kitten"
-	title="A cute kitten" width="500" height="300"/></p> 
 	
 <p align="center"><img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/53893313_352742821993485_2160516099194486784_n.png?_nc_cat=110&_nc_ht=scontent-yyz1-1.xx&oh=d88b453afd29d6e2a989226647310808&oe=5D18D9CC" alt="Kitten"
 	title="A cute kitten" width="500" height="300" /></p> 
