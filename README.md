@@ -32,13 +32,13 @@ stones, or when all the stones on the board display the same colour.
 
 ## <a name="screen"></a>Screenshots
 	
-<p align="center"><img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/53893313_352742821993485_2160516099194486784_n.png?_nc_cat=110&_nc_ht=scontent-yyz1-1.xx&oh=d88b453afd29d6e2a989226647310808&oe=5D18D9CC" alt="Kitten"
+<p align="center"><img src="https://imgur.com/3TKCKOu" alt="Kitten"
 	title="A cute kitten" width="500" height="300" /></p> 
 	
-<p align="center"><img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/54263994_441847886561244_8044955885551747072_n.png?_nc_cat=104&_nc_ht=scontent-yyz1-1.xx&oh=85c52ae211dcfeb3650ae3c4044490b0&oe=5D18AD95" alt="Kitten"
+<p align="center"><img src="https://imgur.com/raEKjA5" alt="Kitten"
 	title="A cute kitten" width="500" height="300" /></p> 
 	
-<p align="center"><img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/54521716_383311655841571_2498309994215112704_n.png?_nc_cat=106&_nc_ht=scontent-yyz1-1.xx&oh=e1197a038bf6750661c3f6f9db31d8f8&oe=5D4B73B8" alt="Kitten"
+<p align="center"><img src="https://imgur.com/hTIDj54" alt="Kitten"
 	title="A cute kitten" width="500" height="300" /></p> 
 	
 [Back to top](#top)
