@@ -32,7 +32,7 @@ stones, or when all the stones on the board display the same colour.
 
 ## <a name="screen"></a>Screenshots
 
-<p align="center"> ![Imgur](https://i.imgur.com/hTIDj54.png) </p>
+![Imgur](https://i.imgur.com/hTIDj54.png) 
 ![Imgur](https://i.imgur.com/3TKCKOu.png)
 ![Imgur](https://i.imgur.com/raEKjA5.png)
 
